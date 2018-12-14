@@ -24,7 +24,7 @@ function add_cities() {
 }
 
 function is_city_registered(city_name) {
-    return gtx.query("is_city_registered", {q_city_name: city_name});
+    return gtx.query("is_city_registered", {city_name: city_name});
     
 }
 
