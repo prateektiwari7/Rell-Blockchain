@@ -12,6 +12,7 @@ const gtx = pcl.gtxClient.createClient(
     []
 );
 
+console.log(gtx);
 // create a random key pair
 const user = pcl.util.makeKeyPair();
 
@@ -19,9 +20,11 @@ function add_cities() {
     const tx = gtx.newTransaction([user.pubKey]);
     tx.addOperation('insert_city', "Kiev");
     tx.addOperation('insert_city', "Stockholm");
+    tx.addOperation('insert_city', "Udaipur");
     tx.sign(user.privKey, user.pubKey);
     return tx.postAndWaitConfirmation();
 }
+
 
 function is_city_registered(city_name) {
     return gtx.query("is_city_registered", {city_name: city_name});
@@ -30,8 +33,29 @@ function is_city_registered(city_name) {
 
 async function runTest() {
     await add_cities();
-    const kiev_registered = await is_city_registered("Kiev");
+    const kiev_registered = await is_city_registered("Udaipur");
     console.log("kiev_registered=", kiev_registered);
 }
 
-runTest().catch( err => console.log(err.stack));
+//runTest().catch( err => console.log(err.stack));
+
+function add_user(){
+    const tx = gtx.newTransaction([user.pubKey]);
+    tx.addOperation('add_user');
+    tx.sign(user.privKey,user.pubKey);
+    return tx.postAndWaitConfirmation();
+}
+
+function is_user_registered(usr_name){
+    return gtx.query("is_user_registered",{usr_name : usr_name});
+}
+
+
+async function makeTest() {
+   // await add_user();
+    const output= await is_user_registered("Prateek");
+    console.log(output);
+}
+
+
+makeTest().catch(err => console.log(err.stack));
