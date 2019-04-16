@@ -1,0 +1,23 @@
+﻿class city { key name; }
+class user { key name; index pubkey; }
+class channel { index owner: user;key name; }
+   
+operation insert_city (name) {
+    create city (name);
+}
+
+query is_city_registered(city_name: text): boolean {
+      return (city @? { city_name }) != null;
+}
+
+operation add_user(){
+create user("Prateek", x"0373599a61cc6b3bc02a78c34313e1737ae9cfd56b9bb24360b437d469efdf3b15");
+}
+
+query is_user_registered(usr_name : text): boolean {
+      return (user @? { usr_name }) != null;    
+}
+
+ 
+ 
+ 
