@@ -37,5 +37,5 @@ async function runTest() {
     console.log("kiev_registered=", kiev_registered);
 }
 
-//runTest().catch( err => console.log(err.stack));
+runTest().catch( err => console.log(err.stack));
 
