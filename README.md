@@ -14,4 +14,4 @@ Open Another cmd and Type
 >open output to see output images
 
 
-https://github.com/prateektiwari7/Rell-Blockchain/blob/master/localhost.png
+![Screenshot](localhost.png)
