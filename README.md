@@ -7,3 +7,7 @@ Open cmd and Type
 Open browser and type localhost:30000 
 >Create new module <br>
 >Start the test cases <br>
+
+Open Another cmd and Type
+>node index.js  <br>
+>node add_users.js <br>
