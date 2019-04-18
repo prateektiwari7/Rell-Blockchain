@@ -1,0 +1,16 @@
+﻿<test>
+  <block>
+    <transaction>
+      <signers><param type="bytea" key="Alice"/></signers>
+      <operations>
+        <operation name="insert_city">
+          <string>Keiv</string>
+        </operation>
+          <operation name="add_user_with_key">
+          
+        </operation>
+        
+      </operations>
+    </transaction>
+  </block>
+</test>

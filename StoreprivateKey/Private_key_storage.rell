@@ -1,0 +1,25 @@
+﻿class city { key name; }
+class user{ pubkey: pubkey;}
+operation insert_city (name) {
+    create city (name);
+}
+
+query is_city_registered(city_name: text): boolean {
+      return (city @? { city_name }) != null;
+}
+
+operation add_user_with_key(pubkey)
+{
+create user(pubkey);
+}
+
+
+query all_user_query() {
+val all_users : list<user> = user @* {};
+return all_users;
+}
+
+query is_user_key(user_key : pubkey ): boolean { 
+    return (user @? { user_key }) != null;
+    
+}
