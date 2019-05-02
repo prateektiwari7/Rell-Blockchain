@@ -17,5 +17,3 @@ Open Another cmd and Type
 ![Screenshot](localhost.png)
 
 
-
-
